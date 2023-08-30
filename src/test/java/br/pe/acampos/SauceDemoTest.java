@@ -53,7 +53,6 @@ public class SauceDemoTest {
             driver.quit();
         }
     }
-
     @Test
     @DisplayName("Nao deve logar sem password")
     public void naoDeveLogarSemPassword() {
@@ -64,7 +63,6 @@ public class SauceDemoTest {
             driver.findElement(By.id("login-button")).click();
             String message = driver.findElement(By.cssSelector(
                     "#login_button_container > div > form > div.error-message-container.error > h3")).getText();
-
             Assertions.assertEquals("Epic sadface: Password is required", message);
         } finally {
             driver.quit();
